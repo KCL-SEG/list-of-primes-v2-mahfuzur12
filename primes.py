@@ -2,6 +2,8 @@
 """ENTER YOUR SOLUTION HERE!"""
 
 def primes(number_of_primes):
+    if number_of_primes <= 0:
+        raise ValueError("Should be a positive number.")
     list = [2]
     counter = 0
     number = 3
