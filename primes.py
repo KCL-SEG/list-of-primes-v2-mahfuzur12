@@ -2,21 +2,20 @@
 """ENTER YOUR SOLUTION HERE!"""
 
 def primes(number_of_primes):
-    if number_of_primes <= 0:
-        raise ValueError("Should be a positive number.")
-    list = [2]
-    counter = 0
-    number = 3
-    while counter < number_of_primes - 1:
-        for i in range (2, number):
-            if (number % i != 0):
-                list.append(number)
-                counter += 1
-                number += 1
-            else:
-                number += 1
-
-    print(list)
+    count = 0
+    number = 2
+    list = []
+    
+    if (number_of_primes <= 0):
+        raise ValueError
+    
+    while count < number_of_primes:
+        isPrime = True
+        for i in range(2, number):
+            if (number % i == 0):
+                isPrime = False
+        if isPrime:
+            list.append(number)
+            count += 1
+        number += 1
     return list
-
-primes(10)
